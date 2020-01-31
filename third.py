@@ -21,15 +21,18 @@ def decode(numbers, trans):
     return res
 
 while True:
-    n, m, type = map(int, input().split())
-    numbers = input().split()
-    transposition = [i for i in range(1, m+1)]
+    try:
+        n, m, type = map(int, input().split())
+        numbers = input().split()
+        transposition = [i for i in range(1, m+1)]
 
-    if type == 1:
-        # зашифровать
-        encode_list = encode(numbers, transposition)
-        print(' '.join(map(str, encode_list)))
-    if type == 2:
-        # расшифровать
-        decode_list = decode(numbers, transposition)
-        print(' '.join(map(str, decode_list)))
+        if type == 1:
+            # зашифровать
+            encode_list = encode(numbers, transposition)
+            print(' '.join(map(str, encode_list)))
+        if type == 2:
+            # расшифровать
+            decode_list = decode(numbers, transposition)
+            print(' '.join(map(str, decode_list)))
+    except Exception:
+        pass
